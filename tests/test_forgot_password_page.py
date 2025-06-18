@@ -1,6 +1,6 @@
 import allure
 from pages.forgot_password_page import ForgotPasswordPage
-from data import RESET_BUTTON_LOCATOR_TEXT, SAVE_RESET_BUTTON_LOCATOR_TEXT, PASSWORD_TEXT_FIELD_FOCUSED_PLACEHOLDER
+from data import RESET_BUTTON_LOCATOR_TEXT, SAVE_RESET_BUTTON_LOCATOR_TEXT, PASSWORD_TEXT_FIELD_FOCUSED_PLACEHOLDER_TEXT
 
 
 class TestForgotButtonPage:
@@ -23,5 +23,5 @@ class TestForgotButtonPage:
         page.enter_email()
         page.click_on_reset_button()
         page.click_on_eye_icon_button()
-        assert page.get_text_from_active_field() == PASSWORD_TEXT_FIELD_FOCUSED_PLACEHOLDER
+        assert page.get_text_from_active_field() == PASSWORD_TEXT_FIELD_FOCUSED_PLACEHOLDER_TEXT
 
