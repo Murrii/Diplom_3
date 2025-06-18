@@ -1,6 +1,6 @@
 import allure
 from pages.base_page import BasePage
-from locators import forgot_password_locators
+from locators import forgot_password_page_locators
 from data import EMAIL
 
 
