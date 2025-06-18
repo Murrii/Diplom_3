@@ -3,11 +3,11 @@ from pages.forgot_password_page import ForgotPasswordPage
 from data import RESET_BUTTON_LOCATOR_TEXT, SAVE_RESET_BUTTON_LOCATOR_TEXT, PASSWORD_TEXT_FIELD_FOCUSED_PLACEHOLDER_TEXT
 
 
-class TestForgotButtonPage:
+class TestForgotPasswordPage:
     @allure.title("Переход на страницу восстановления пароля по кнопке «Восстановить пароль»")
     def test_click_open_reset_password_page_button_jump_to_reset_password_page(self, driver_login_page):
         page = ForgotPasswordPage(driver_login_page)
-        page.click_on_open_reset_button_page_button()
+        page.click_on_open_reset_page_button()
         assert page.get_text_from_reset_button() == RESET_BUTTON_LOCATOR_TEXT
 
     @allure.title("Ввод почты и клик по кнопке «Восстановить»")

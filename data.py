@@ -18,7 +18,7 @@ EXIT_BUTTON_TEXT = "Выход"
 OPEN_FORGOT_PASSWORD_PAGE_BUTTON_TEXT = "Восстановить пароль"
 
 # текст вкладки История заказов
-ORDERS_HISORY_TEXT = "История заказов"
+ORDERS_HISTORY_TEXT = "История заказов"
 
 # данные для тестов
 EMAIL = "ktrof@mail.ru"

@@ -1,5 +1,5 @@
 from pages.profile_page import ProfilePage
-from data import EXIT_BUTTON_TEXT, ORDERS_HISORY_TEXT, OPEN_FORGOT_PASSWORD_PAGE_BUTTON_TEXT
+from data import EXIT_BUTTON_TEXT, ORDERS_HISTORY_TEXT, OPEN_FORGOT_PASSWORD_PAGE_BUTTON_TEXT
 import allure
 from pages.forgot_password_page import ForgotPasswordPage
 
@@ -16,7 +16,7 @@ class TestProfilePage:
         page = ProfilePage(driver_auth_main_page)
         page.go_to_the_profile()
         page.go_to_the_orders_history()
-        assert page.get_active_tab_name() == ORDERS_HISORY_TEXT
+        assert page.get_active_tab_name() == ORDERS_HISTORY_TEXT
 
     @allure.title("Выход из аккаунта")
     def test_click_on_exit_button_logout(self, driver_auth_main_page):
