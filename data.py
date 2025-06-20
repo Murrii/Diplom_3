@@ -26,3 +26,13 @@ EMAIL = "ktrof@mail.ru"
 # Данные для логина
 LOGIN_EMAIL = "karinatrofimova201991@yandex.ru"
 LOGIN_PASSWORD = "123123"
+
+"""
+Локаторы для Main
+"""
+
+# Название тестового ингредиента
+BUN_INGREDIENT_NAME_TEXT = "Флюоресцентная булка R2-D3"
+
+# Заголовок модального окна с деталями ингредиента
+DETAIL_MODAL_WINDOW_TITLE = "Детали ингредиента"

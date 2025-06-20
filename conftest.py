@@ -3,6 +3,7 @@ import allure
 from selenium import webdriver
 from data import LOGIN_PAGE_URL, FORGOT_PASSWORD_PAGE_URL
 from pages.login_page import LoginPage
+import config
 
 
 @allure.title("Открываем браузер и переходим на страницу Логин")
@@ -11,8 +12,10 @@ from pages.login_page import LoginPage
 def driver_login_page(request):
     driver = None
     if request.param == "firefox":
+        config.browser = "firefox"
         driver = webdriver.Firefox()
     elif request.param == "chrome":
+        config.browser = "chrome"
         driver = webdriver.Chrome()
     driver.get(LOGIN_PAGE_URL)
     yield driver
@@ -24,8 +27,10 @@ def driver_login_page(request):
 def driver_forgot_password_page(request):
     driver = None
     if request.param == "firefox":
+        config.browser = "firefox"
         driver = webdriver.Firefox()
     elif request.param == "chrome":
+        config.browser = "chrome"
         driver = webdriver.Chrome()
     driver.get(FORGOT_PASSWORD_PAGE_URL)
     yield driver
@@ -38,9 +43,12 @@ def driver_forgot_password_page(request):
 def driver_auth_main_page(request):
     driver = None
     if request.param == "firefox":
+        config.browser = "firefox"
         driver = webdriver.Firefox()
     elif request.param == "chrome":
+        config.browser = "chrome"
         driver = webdriver.Chrome()
+
 
     # Открываем экран авторизации и авторизируемся
     driver.get(LOGIN_PAGE_URL)
