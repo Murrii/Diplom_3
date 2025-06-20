@@ -3,6 +3,7 @@ MAIN_PAGE_URL = "https://stellarburgers.nomoreparties.site/"
 FORGOT_PASSWORD_PAGE_URL = "https://stellarburgers.nomoreparties.site/forgot-password"
 LOGIN_PAGE_URL = "https://stellarburgers.nomoreparties.site/login"
 PROFILE_PAGE_URL = "https://stellarburgers.nomoreparties.site/account/profile"
+FEED_PAGE_URL = "https://stellarburgers.nomoreparties.site/feed"
 
 # текст кнопки восстановления пароля на странице /forgot-password
 RESET_BUTTON_LOCATOR_TEXT = "Восстановить"
@@ -28,11 +29,15 @@ LOGIN_EMAIL = "karinatrofimova201991@yandex.ru"
 LOGIN_PASSWORD = "123123"
 
 """
-Локаторы для Main
+Тексты для Main
 """
-
 # Название тестового ингредиента
 BUN_INGREDIENT_NAME_TEXT = "Флюоресцентная булка R2-D3"
 
 # Заголовок модального окна с деталями ингредиента
 DETAIL_MODAL_WINDOW_TITLE = "Детали ингредиента"
+
+"""
+Тексты для Feed
+"""
+ORDER_STATUS_FINISHED_TITLE = "Готовы:"

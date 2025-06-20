@@ -6,7 +6,9 @@ BUN_INGREDIENT_LOCATOR = (By.XPATH, ".//a[@href='/ingredient/61c0c5a71d1f82001bd
 
 MODAL_WINDOW_TITLE_LOCATOR = (By.XPATH, ".//section[contains(@class, 'Modal_modal_opened')]//h2")
 
-CLOSE_MODAL_WINDOW_BUTTON_LOCATOR = (By.XPATH, ".//section[contains(@class, 'Modal_modal_opened')]//button[contains(@class, 'modal__close')]")
+CLOSE_MODAL_WINDOW_DETAILS_BUTTON_LOCATOR = (By.XPATH, ".//section[contains(@class, 'Modal_modal_opened')]//button[contains(@class, 'modal__close')]")
+
+CLOSE_MODAL_WINDOW_ORDER_BUTTON_LOCATOR = (By.XPATH, ".//section[contains(@class, 'Modal_modal')]//button[contains(@class, 'modal__close')]")
 
 COUNTER_ICON_LOCATOR = (By.XPATH, ".//a[@href='/ingredient/61c0c5a71d1f82001bdaaa6d']//p[contains(@class, 'counter_counter')]")
 

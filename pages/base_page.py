@@ -2,7 +2,6 @@ from selenium.common import ElementClickInterceptedException
 from selenium.webdriver import ActionChains
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.common.keys import Keys
 
 
 class BasePage:
@@ -34,21 +33,6 @@ class BasePage:
     # Заполняем поле текстом
     def fill_text_to_field(self, locator, text):
         self.find_element_with_wait_clickable(locator).send_keys(text)
-
-    # Прокручиваем страницу до выбранного элемента и ждем пока все прогрузится
-    def scroll_to_element(self, locator):
-        self.driver.execute_script('arguments[0].scrollIntoView();', self.find_element_with_wait_visibility(locator))
-        self.find_element_with_wait_visibility(locator)
-
-    # Прокручиваем страницу до конца
-    def scroll_down(self):
-        self.driver.execute_script('window.scrollTo(0, document.body.scrollHeight)')
-
-    # Вводим данные в поле и подтверждаем ввод кнопкой ENTER
-    def fill_the_field_and_click_enter(self, locator, text):
-        element = self.find_element_with_wait_clickable(locator)
-        element.send_keys(text)
-        element.send_keys(Keys.ENTER)
 
     # drag-and-drop для chrome
     def drag_from_drop_to_chrome(self, locator_from, locator_to):
@@ -100,6 +84,11 @@ class BasePage:
                 dispatchEvent(source, dragEndEvent, dropEvent.dataTransfer);
             """, element_from, element_to)
 
+    # получаем текст элемента без указания локатора
+    @staticmethod
+    def get_text_from_element_without_locator(element):
+        return element.text
+
     # Проверяем, что элемент не отображается на странице
     def is_element_invisible(self, locator):
         try:
@@ -107,3 +96,25 @@ class BasePage:
             return True
         except TimeoutError:
             return False
+
+    # Проверяем, что элемент отображается на странице
+    def is_element_visible(self, locator):
+        try:
+            WebDriverWait(self.driver, 10).until(expected_conditions.visibility_of_element_located(locator))
+            return True
+        except TimeoutError:
+            return False
+
+    # получаем список элементов
+    def get_list_of_elements(self, locator):
+        list_of_elements = self.driver.find_elements(*locator)
+        return list_of_elements
+
+    # ждем, пока изменится текст элемента
+    def wait_change_of_element(self, locator, text_must_change):
+        self.find_element_with_wait_visibility(locator)
+        WebDriverWait(self.driver, 10).until_not(expected_conditions.text_to_be_present_in_element(locator, str(text_must_change)))
+
+    # ждем, пока в элементе появится текст
+    def wait_text_is_visible(self, locator, text_must_visible):
+        WebDriverWait(self.driver, 5).until(expected_conditions.text_to_be_present_in_element(locator, text_must_visible))
