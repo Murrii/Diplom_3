@@ -63,7 +63,6 @@ class FeedPage(BasePage):
         for order in list_of_orders:
             order_id = self.get_text_from_element_without_locator(order)
             list_ids_orders_in_work.append(order_id)
-        print(list_ids_orders_in_work)
         return list_ids_orders_in_work
 
     @allure.step("Ждем, пока новый заказ отобразится в списке заказов в работе")

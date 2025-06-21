@@ -45,8 +45,6 @@ class BasePage:
     def drag_from_drop_to_firefox(self, locator_from, locator_to):
         element_from = self.find_element_with_wait_clickable(locator_from)
         element_to = self.find_element_with_wait_clickable(locator_to)
-        #action = ActionChains(self.driver)
-        #action.click_and_hold(element_from).move_to_element(element_to).release().perform()
         self.driver.execute_script("""
                 function createEvent(typeOfEvent) {
                     var event = document.createEvent("CustomEvent");

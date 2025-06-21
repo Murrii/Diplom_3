@@ -1,9 +1,10 @@
 # url для проверок
-MAIN_PAGE_URL = "https://stellarburgers.nomoreparties.site/"
-FORGOT_PASSWORD_PAGE_URL = "https://stellarburgers.nomoreparties.site/forgot-password"
-LOGIN_PAGE_URL = "https://stellarburgers.nomoreparties.site/login"
-PROFILE_PAGE_URL = "https://stellarburgers.nomoreparties.site/account/profile"
-FEED_PAGE_URL = "https://stellarburgers.nomoreparties.site/feed"
+BASE_URL="https://stellarburgers.nomoreparties.site/"
+MAIN_PAGE_URL = ""
+FORGOT_PASSWORD_PAGE_URL = "forgot-password"
+LOGIN_PAGE_URL = "login"
+PROFILE_PAGE_URL = "account/profile"
+FEED_PAGE_URL = "feed"
 
 # текст кнопки восстановления пароля на странице /forgot-password
 RESET_BUTTON_LOCATOR_TEXT = "Восстановить"

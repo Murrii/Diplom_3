@@ -1,9 +1,11 @@
 from pages.base_page import BasePage
 from locators import login_page_locators
 from data import LOGIN_EMAIL as EMAIL, LOGIN_PASSWORD as PASSWORD
+import allure
 
 
 class LoginPage(BasePage):
+    @allure.step("Авторизируемся в системе")
     def login(self):
         email_field = self.find_element_with_wait_clickable(login_page_locators.EMAIL_INPUT)
         self.click_on_element(email_field)
